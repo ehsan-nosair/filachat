@@ -84,7 +84,7 @@ class="flex flex-col w-full md:w-2/3 overflow-hidden">
                             @else
                                 <div class="w-6 h-6"></div> <!-- Placeholder to align the messages properly -->
                             @endif
-                            <div class="max-w-md p-2 bg-gray-200 rounded-t-xl rounded-br-xl dark:bg-gray-800">
+                            <div class="max-w-md p-2 bg-gray-200 {{ app()->getLocale() == 'ar' ? 'rounded-bl-xl':'rounded-br-xl' }} dark:bg-gray-800">
                                 @if ($message->message)
                                     <p class="text-sm">{{ $message->message }}</p>
                                 @endif
@@ -140,7 +140,7 @@ class="flex flex-col w-full md:w-2/3 overflow-hidden">
                     @else
                         <!-- Right Side -->
                         <div class="flex flex-col items-end gap-2 mb-2">
-                            <div class="max-w-md p-2 text-white rounded-t-xl rounded-bl-xl bg-primary-600 dark:bg-primary-500">
+                            <div class="max-w-md p-2 text-white rounded-t-xl {{ app()->getLocale() == 'ar' ? 'rounded-br-xl':'rounded-bl-xl' }} bg-primary-600 dark:bg-primary-500">
                                 @if ($message->message)
                                     <p class="text-sm">{{ $message->message }}</p>
                                 @endif
@@ -222,7 +222,7 @@ class="flex flex-col w-full md:w-2/3 overflow-hidden">
 
 
         <!-- Chat Input -->
-        <div class="w-full p-4 border-t dark:border-gray-800/60 border-gray-200/90">
+        <div dir="ltr" class="w-full p-4 border-t dark:border-gray-800/60 border-gray-200/90">
             <form wire:submit="sendMessage" class="flex items-end justify-between w-full gap-4">
                 <div class="w-full max-h-96 overflow-y-auto">
                     {{ $this->form }}
