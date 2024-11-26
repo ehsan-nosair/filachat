@@ -84,7 +84,7 @@ class="flex flex-col w-full md:w-2/3 overflow-hidden">
                             @else
                                 <div class="w-6 h-6"></div> <!-- Placeholder to align the messages properly -->
                             @endif
-                            <div class="max-w-md p-2 bg-gray-200 {{ app()->getLocale() == 'ar' ? 'rounded-bl-xl':'rounded-br-xl' }} dark:bg-gray-800">
+                            <div class="max-w-md p-2 bg-gray-200 rounded-t-xl {{ app()->getLocale() == 'ar' ? 'rounded-bl-xl':'rounded-br-xl' }} dark:bg-gray-800">
                                 @if ($message->message)
                                     <p class="text-sm">{{ $message->message }}</p>
                                 @endif
